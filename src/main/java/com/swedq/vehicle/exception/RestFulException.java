@@ -1,12 +1,13 @@
 package com.swedq.vehicle.exception;
 
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Map;
-
-@Data
 @NoArgsConstructor
+@Getter
+@Setter
 public class RestFulException extends RuntimeException {
     private Map<String, Object> properties;
     private Integer errorCode;
@@ -22,5 +23,7 @@ public class RestFulException extends RuntimeException {
         super(errorMessage);
         this.errorMessage = errorMessage;
     }
+
+
 
 }

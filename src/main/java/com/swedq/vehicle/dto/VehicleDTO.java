@@ -17,7 +17,7 @@ import java.util.Date;
 public class VehicleDTO implements Serializable {
     @NotEmpty
     @Size(min = 17, max = 17)
-    private String id;
+    private String idVehicle;
     @NotEmpty
     @Size(max = 17)
     private String registrationNumber;
@@ -26,7 +26,7 @@ public class VehicleDTO implements Serializable {
     private Status status;
 
     public VehicleDTO(Vehicle vehicle){
-        this.id = vehicle.getId();
+        this.idVehicle = vehicle.getId();
         this.registrationNumber = vehicle.getRegistrationNumber();
         this.idCustomer = vehicle.getIdCustomer();
         this.status = determineStatus(vehicle.getLastUpdate());

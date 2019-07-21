@@ -24,7 +24,7 @@ public class Vehicle {
     private Date lastUpdate;
 
     public Vehicle(VehicleDTO vehicleDTO){
-        this.id = vehicleDTO.getId();
+        this.id = vehicleDTO.getIdVehicle();
         this.registrationNumber = vehicleDTO.getRegistrationNumber();
         this.idCustomer = vehicleDTO.getIdCustomer();
     }

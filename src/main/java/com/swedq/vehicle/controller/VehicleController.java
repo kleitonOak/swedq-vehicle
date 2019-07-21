@@ -12,7 +12,8 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/api/v1/vehicle", headers = "Accept=application/json")
+@RequestMapping(value = "/api/v1/vehicle", headers = "Accept=application/json", produces = "application/json")
+@CrossOrigin
 public class VehicleController {
 
     @Autowired
@@ -25,7 +26,7 @@ public class VehicleController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    @GetMapping
+    @GetMapping(produces = "application/json")
     public ResponseEntity<List<VehicleDTO>> getVehicles(){
         List<VehicleDTO> vehicleList = service.findAll();
         if(CollectionUtils.isEmpty(vehicleList)){
